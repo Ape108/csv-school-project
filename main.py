@@ -38,10 +38,13 @@ while file_name == '':
                 if choice == '1':
                     salary_average = salaryAvg(my_file)
                     print(f"The average salary is: \n${salary_average}")
+                    with open("output.txt", "w") as output_file:
+                        output_file.write(f"${salary_average}")
                 elif choice == '2':
                     highest_record, name = maxRecord(my_file)
                     print(f"{name} had the highest sales record: \n${highest_record}")
-                    pass
+                    with open("output.txt", "w") as output_file:
+                        output_file.write(f"{name}, ${highest_record}")
                 else:
                     print("Please enter 1 or 2.")
                     choice = None
