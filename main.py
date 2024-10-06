@@ -52,10 +52,10 @@ while file_name == '':
     except (FileNotFoundError, IOError):
         print("File does not exist. Please enter a valid file name.")
         file_name = ''
-    """
+    
     except:
         print("Error retrieving file. Please try again.")
         file_name = ''
-    """
+    
 
 
