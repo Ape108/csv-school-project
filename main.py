@@ -6,9 +6,9 @@ import csv
 def salaryAvg(csv_file):
     total = 0
     terms = 0
-    salary_reader = csv.reader(csv_file, delimiter=",")
+    salary_reader = list(csv.reader(csv_file, delimiter=","))
     for row in salary_reader:
-        if row == ["Name", "Salary", "Sales"]:
+        if row == salary_reader[0]:
             continue
         total += int(row[1])
         terms += 1
@@ -18,9 +18,9 @@ def salaryAvg(csv_file):
 def maxRecord(csv_file):
     maxValue = 0
     name = None
-    sales_reader = csv.reader(csv_file, delimiter=",")
+    sales_reader = list(csv.reader(csv_file, delimiter=","))
     for row in sales_reader:
-        if row == ["Name", "Salary", "Sales"]:
+        if row == sales_reader[0]:
             continue
         if maxValue < int(row[2]):
             maxValue = int(row[2])
